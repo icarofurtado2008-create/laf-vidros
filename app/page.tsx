@@ -7,16 +7,16 @@ import Motion from "@/components/Motion";
 import { wa, MSG, INSTAGRAM } from "@/lib/site";
 
 const PROJECTS = [
-  { src: "/img/box-frame.webp", pos: "50% 30%", cls: "p-tall", t: "Box do piso ao teto", d: "Vidro temperado incolor · perfil fino" },
-  { src: "/img/espelho.webp", pos: "50% 20%", cls: "p-wide", t: "Lavabo comercial", d: "Espelho prata em parede e teto" },
-  { src: "/img/box-gold.webp", pos: "50% 50%", cls: "p-std", t: "Box de correr", d: "Acabamento dourado · banheiro em mármore" },
+  { src: "/img/box-frame.webp", pos: "50% 25%", cls: "p-tall", t: "Box do piso ao teto", d: "Vidro temperado incolor · perfil fino" },
+  { src: "/img/espelho.webp", pos: "45% 32%", cls: "p-wide", t: "Lavabo comercial", d: "Espelho prata em parede e teto" },
+  { src: "/img/box-gold.webp", pos: "50% 16%", cls: "p-std", t: "Box de correr", d: "Acabamento dourado · banheiro em mármore" },
 ];
 
 const DETAILS = [
-  { src: "/img/box-gold.webp", pos: "48% 4%", k: "Roldanas", d: "Sistema de correr aparente, alinhado ao trilho." },
-  { src: "/img/box-frame.webp", pos: "42% 8%", k: "Junções", d: "Encontro de planos no canto, do piso ao forro." },
-  { src: "/img/box-gold.webp", pos: "92% 60%", k: "Perfis", d: "Acabamento dourado em todo o perímetro." },
-  { src: "/img/espelho.webp", pos: "65% 4%", k: "Paginação", d: "Espelho modulado com juntas retas." },
+  { src: "/img/box-gold.webp", pos: "49% 6%", k: "Roldanas", d: "Sistema de correr aparente, alinhado ao trilho." },
+  { src: "/img/box-frame.webp", pos: "51% 15%", k: "Junções", d: "Encontro de planos no canto, do piso ao forro." },
+  { src: "/img/box-gold.webp", pos: "86% 35%", k: "Perfis", d: "Acabamento dourado em todo o perímetro." },
+  { src: "/img/espelho.webp", pos: "55% 25%", k: "Paginação", d: "Espelho modulado com juntas retas." },
 ];
 
 export default function Page() {
@@ -56,7 +56,15 @@ export default function Page() {
         {/* 03 — Manutenção */}
         <section className="mnt" id="manutencao">
           <div className="mnt-media" data-mask>
-            <Image src="/img/box-gold.webp" alt="Box de vidro de correr com perfis e roldanas dourados" fill sizes="(max-width:900px) 100vw, 45vw" data-parallax="6" />
+            <Image
+              src="/img/box-gold.webp"
+              alt="Box de vidro de correr com perfis e roldanas dourados"
+              fill
+              quality={90}
+              sizes="(max-width:900px) 100vw, (max-width:1400px) 45vw, 620px"
+              style={{ objectPosition: "50% 8%" }}
+              data-parallax="3"
+            />
             <span className="corners" />
           </div>
           <div className="mnt-copy">
@@ -100,7 +108,15 @@ export default function Page() {
             {PROJECTS.map((p, n) => (
               <figure key={p.t} className={`prj-item ${p.cls}`}>
                 <div className="prj-img" data-mask>
-                  <Image src={p.src} alt={`${p.t} — ${p.d}`} fill sizes="(max-width:900px) 100vw, 60vw" style={{ objectPosition: p.pos }} data-parallax="5" />
+                  <Image
+                    src={p.src}
+                    alt={`${p.t} — ${p.d}`}
+                    fill
+                    quality={90}
+                    sizes="(max-width:900px) 100vw, (max-width:1400px) 58vw, 820px"
+                    style={{ objectPosition: p.pos }}
+                    data-parallax="2.5"
+                  />
                 </div>
                 <figcaption data-reveal>
                   <i>P.0{n + 1}</i>
@@ -129,7 +145,14 @@ export default function Page() {
             {DETAILS.map((d, n) => (
               <figure key={d.k} className="dtl-item" data-reveal>
                 <div className="dtl-img">
-                  <Image src={d.src} alt={d.k} fill sizes="(max-width:700px) 80vw, 25vw" style={{ objectPosition: d.pos, transform: "scale(2.4)", transformOrigin: d.pos }} />
+                  <Image
+                    src={d.src}
+                    alt={d.k}
+                    fill
+                    quality={90}
+                    sizes="(max-width:700px) 80vw, (max-width:1200px) 25vw, 320px"
+                    style={{ objectPosition: d.pos, transform: "scale(1.12)", transformOrigin: d.pos }}
+                  />
                   <span className="cross" />
                 </div>
                 <figcaption>

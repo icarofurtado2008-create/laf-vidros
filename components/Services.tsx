@@ -6,31 +6,31 @@ import { wa, MSG } from "@/lib/site";
 
 const ITEMS = [
   {
-    key: "box", label: "Box", img: "/img/box-frame.webp", pos: "50% 40%",
+    key: "box", label: "Box", img: "/img/box-frame.webp", pos: "50% 32%",
     title: "Box de vidro temperado",
     text: "Do box de correr ao box do piso ao teto. Incolor, jateado ou com faixa de jateamento, com perfis e roldanas definidos pelo projeto do banheiro.",
     cta: "Quero orçamento para box", msg: MSG.box,
   },
   {
-    key: "janelas", label: "Janelas", img: "/img/box-gold.webp", pos: "50% 22%",
+    key: "janelas", label: "Janelas", img: "/img/box-gold.webp", pos: "50% 10%",
     title: "Janelas e portas de vidro",
     text: "Janelas em vidro temperado com sistemas de abertura modernos, portas de correr e fechamentos de sacada em vidro incolor.",
     cta: "Quero orçamento para janela", msg: MSG.janela,
   },
   {
-    key: "vitrines", label: "Vitrines", img: "/img/espelho.webp", pos: "50% 65%",
+    key: "vitrines", label: "Vitrines", img: "/img/espelho.webp", pos: "50% 40%",
     title: "Vitrines e ambientes comerciais",
     text: "Vidro como plano de apresentação do negócio: superfícies limpas que expõem o produto e organizam o espaço.",
     cta: "Quero orçamento para vitrine", msg: MSG.vitrine,
   },
   {
-    key: "espelhos", label: "Espelhos", img: "/img/espelho.webp", pos: "25% 30%",
+    key: "espelhos", label: "Espelhos", img: "/img/espelho.webp", pos: "30% 35%",
     title: "Espelhos sob medida",
     text: "Espelho prata para ampliar e iluminar lavabos, banheiros e áreas comerciais — medida exata, do piso ao teto se o projeto pedir.",
     cta: "Quero orçamento para espelho", msg: MSG.espelho,
   },
   {
-    key: "manutencao", label: "Manutenção", img: "/img/box-gold.webp", pos: "50% 4%",
+    key: "manutencao", label: "Manutenção", img: "/img/box-gold.webp", pos: "50% 6%",
     title: "Manutenção de box",
     text: "Box de correr e box embutido revisados: roldanas, trilhos, alinhamento e fixações, para o vidro voltar a correr com segurança.",
     cta: "Preciso de manutenção", msg: MSG.manutencao,
@@ -76,7 +76,15 @@ export default function Services() {
         </div>
         <div className="svc-stage" ref={stage} role="tabpanel">
           <div className="svc-img">
-            <Image key={it.key} src={it.img} alt={it.title} fill sizes="(max-width:900px) 100vw, 58vw" style={{ objectPosition: it.pos }} />
+            <Image
+              key={it.key}
+              src={it.img}
+              alt={it.title}
+              fill
+              quality={90}
+              sizes="(max-width: 900px) 100vw, (max-width: 1400px) 52vw, 680px"
+              style={{ objectPosition: it.pos }}
+            />
             <span className="svc-wipe" />
             <span className="corners" />
             <span className="tag">{String(i + 1).padStart(2, "0")} / 05</span>

@@ -13,15 +13,15 @@ export default function Hero() {
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ delay: 0.9 });
-      tl.from(".hero-img", { scale: 1.15, duration: 2.2, ease: "power3.out" })
-        .from(".pane", { xPercent: (i) => (i % 2 ? 130 : -130), duration: 1.4, stagger: 0.12, ease: "expo.out" }, 0)
+      tl.from(".hero-img", { scale: 1.04, duration: 2.2, ease: "power2.out" })
+        .from(".pane", { xPercent: (i) => (i % 2 ? 110 : -110), duration: 1.4, stagger: 0.1, ease: "expo.out" }, 0)
         .from(".hero-rule", { scaleY: 0, transformOrigin: "top", duration: 1.2, stagger: 0.1, ease: "expo.out" }, 0.1)
         .from(".hero h1 .ln > span", { yPercent: 110, duration: 1.1, stagger: 0.1, ease: "expo.out" }, 0.3)
-        .from(".hero-sub, .hero-ctas, .hero-meta", { y: 20, opacity: 0, duration: 0.8, stagger: 0.08 }, 0.7);
+        .from(".hero-sub, .hero-ctas, .hero-meta", { y: 16, opacity: 0, duration: 0.8, stagger: 0.08 }, 0.7);
       const st = { trigger: root.current, start: "top top", end: "bottom top", scrub: true };
-      gsap.to(".pane.p1", { yPercent: -18, ease: "none", scrollTrigger: st });
-      gsap.to(".pane.p2", { yPercent: -40, ease: "none", scrollTrigger: st });
-      gsap.to(".hero-media", { yPercent: 14, ease: "none", scrollTrigger: st });
+      gsap.to(".pane.p1", { yPercent: -10, ease: "none", scrollTrigger: st });
+      gsap.to(".pane.p2", { yPercent: -20, ease: "none", scrollTrigger: st });
+      gsap.to(".hero-media", { yPercent: 6, ease: "none", scrollTrigger: st });
     }, root);
     return () => ctx.revert();
   }, []);
@@ -35,7 +35,9 @@ export default function Hero() {
           alt="Box de vidro temperado do piso ao teto em banheiro com forro iluminado"
           fill
           priority
-          sizes="100vw"
+          fetchPriority="high"
+          quality={90}
+          sizes="(max-width: 900px) 100vw, 75vw"
         />
       </div>
       <div className="hero-veil" />
